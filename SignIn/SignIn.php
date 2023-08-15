@@ -246,15 +246,39 @@ mysqli_close($con);
         }
 
         function validateForm() {
-            var userpassword = document.getElementById("userpassword").value;
-            var userpassword_confirm = document.getElementById("user-password-confirm").value;
+            var name = document.getElementById("name").value;
+    var city = document.getElementById("city").value;
+    var email = document.getElementById("mail").value;
+    var phone = document.getElementById("phone").value;
+    var password = document.getElementById("userpassword").value;
+    var confirmPassword = document.getElementById("user-password-confirm").value;
 
-            if (userpassword !== userpassword_confirm) {
-                alert('Password does not match');
-                return false;
-            }
+    if (!/^[A-Za-z\s]+$/.test(name)) {
+        alert("Please enter a valid Name containing only letters.");
+        return false;
+    }
 
-            return true;
+    if (!/^[A-Za-z\s]+$/.test(city)) {
+        alert("Please enter a valid City containing only letters.");
+        return false;
+    }
+    
+    if (!email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    if (!phone.match(/^\d{10}$/)) {
+        alert("Please enter a valid 10-digit phone number.");
+        return false;
+    }
+
+    if (password !== confirmPassword) {
+        alert("Passwords do not match.");
+        return false;
+    }
+
+    return true;
         }
         
         //Successfull registration 
