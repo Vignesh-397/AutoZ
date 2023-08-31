@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="buycars.css">
-    <title>Document</title>
+    <title>Buy Cars</title>
+    <link rel="shortcut icon" href="../AutoZ.png" type="image/x-icon">
 </head>
 <body>
 <header>
@@ -41,7 +42,7 @@
 <?php
 $servername = "db";
 $username = "root";
-$password = "your_root_password_here";
+$password = "autoz2023";
 $port = '3306';
 $dbname = "autoz";
   $con = new mysqli($servername, $username, $password, $dbname);
@@ -60,7 +61,7 @@ echo '<div class="container">';
         if(mysqli_num_rows($checkResult) > 0){
             echo '<div class="box-booked">';
             echo'<div class="box-booked-img">';
-            echo '<img src="/WebP/SellCars/' . $row['img_url'] . '" alt="">';
+            echo '<img src="/SellCars/' . $row['img_url'] . '" alt="">';
             echo '</div>';
                 echo  "<h2>$row[brand]</h2>";
                 echo  "<h2>$row[model]</h2>";
@@ -72,7 +73,7 @@ echo '<div class="container">';
         }else{
             echo '<div class="box">';
             echo'<div class="box-img">';
-            echo '<img src="/WebP/SellCars/' . $row['img_url'] . '" alt="">';
+            echo '<img src="/SellCars/' . $row['img_url'] . '" alt="">';
             echo '</div>';
                 echo  "<h2>$row[brand]</h2>";
                 echo  "<h2>$row[model]</h2>";

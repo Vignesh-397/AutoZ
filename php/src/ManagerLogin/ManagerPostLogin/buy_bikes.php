@@ -6,7 +6,7 @@ if (isset($_POST['bid'])) {
     // Perform the database operation to delete the row from booked_cars table
     $servername = "db";
       $username = "root";
-      $password = "your_root_password_here";
+      $password = "autoz2023";
       $port = '3306';
       $dbname = "autoz";
         $con = new mysqli($servername, $username, $password, $dbname);
