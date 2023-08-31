@@ -10,7 +10,12 @@ if (isset($_GET['param'])) {
     // echo "Parameter value: $param";
 
     if (isset($_POST['name'])) {
-        $con = mysqli_connect("localhost", "root", "", "autoz");
+      $servername = "db";
+      $username = "root";
+      $password = "your_root_password_here";
+      $port = '3306';
+      $dbname = "autoz";
+        $con = new mysqli($servername, $username, $password, $dbname);
         echo "param value: $param";
 
         if (!$con) {

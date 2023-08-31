@@ -3,11 +3,12 @@ session_start();
 
 $insert = false;
 
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-
-    $con = mysqli_connect($server, $username, $password,'autoz');
+$servername = "db";
+$username = "root";
+$password = "your_root_password_here";
+$port = '3306';
+$dbname = "autoz";
+  $con = mysqli_connect($servername, $username, $password, $dbname);
 
 //Register
 if(isset($_POST['name'])){
@@ -32,6 +33,9 @@ if(isset($_POST['name'])){
     //     exit();
     // }
 
+
+
+
     // Check if the email is already registered
     $email_check_query = "SELECT * FROM SignInInfo WHERE Email='$mail' LIMIT 1";
     $result = mysqli_query($con, $email_check_query);
@@ -49,7 +53,7 @@ if(isset($_POST['name'])){
     //Password hashing 
     $hashed_pasword = password_hash($userpassword, PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO `autoz`.`SignInInfo` (`Name`,  `City`, `Email`, `Phone`, `Password`, `dt`) VALUES ('$name',  '$city', '$mail', '$phone', '$hashed_pasword',current_timestamp());";
+    $sql = "INSERT INTO `autoz`.`signininfo` (`Name`,  `City`, `Email`, `Phone`, `Password`, `dt`) VALUES ('$name',  '$city', '$mail', '$phone', '$hashed_pasword',current_timestamp());";
 
     if($con->query($sql) == true){
         $insert = true;

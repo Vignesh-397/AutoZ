@@ -2,12 +2,12 @@
 $insert = false;
 session_start();
 if(isset($_POST['owner_name'])){
-    $server = "localhost";
+    $servername = "db";
     $username = "root";
-    $password = "";
-    $database = "autoz";
-
-    $con = mysqli_connect($server, $username, $password, $database);
+    $password = "your_root_password_here";
+    $port = '3306';
+    $dbname = "autoz";
+      $con = new mysqli($servername, $username, $password, $dbname);
 
     if(!$con){
         die("Connection to this database failed due to" . mysqli_connect_error());
@@ -39,7 +39,7 @@ if(isset($_POST['owner_name'])){
         $img_url = $img_path;
     }
 
-    $sql = "INSERT INTO `sold_bikes` (`owner_name`,  `phone`, `brand`, `model`, 
+    $sql = "INSERT INTO `sold_cars` (`owner_name`,  `phone`, `brand`, `model`, 
     `reg_year`, `RTO`,`fuel_type`, `kms_driven`, `ownership`, `engine`, `transmission`,
     `mileage`,`wheel_size`,`seats`, `price` ,`img_url`) 
     VALUES ('$owner_name',  '$phone', '$brand', '$model', '$year', '$RTO','$fuel','$kms',
@@ -76,7 +76,7 @@ if(isset($_POST['owner_name'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="sellbikes.css" class="css">
+    <link rel="stylesheet" href="sellcars.css" class="css">
     <title>Document</title>
 </head>
 
@@ -95,7 +95,7 @@ if(isset($_POST['owner_name'])){
                     <ol class="sub-menu" aria-label="submenu">
                         <li class="menu-item"><a href="#0">Popular Cars</a></li>
                         <li class="menu-item"><a href="../BuyCars/buycars.php">Buy Cars</a></li>
-                        <li class="menu-item"><a href="../SellCars/sellcars.php">Sell Cars</a></li>
+                        <li class="menu-item"><a href="#">Sell Cars</a></li>
                     </ol>
                 </li>
                 <li class="menu-item" aria-haspopup="true">
@@ -103,7 +103,7 @@ if(isset($_POST['owner_name'])){
                     <ol class="sub-menu" aria-label="submenu">
                         <li class="menu-item"><a href="#0">Popular Bikes</a></li>
                         <li class="menu-item"><a href="../BuyBikes/buybikes.php">Buy Bikes</a></li>
-                        <li class="menu-item"><a href="#0">Sell Bikes</a></li>
+                        <li class="menu-item"><a href="../SellBikes/sellbikes.php">Sell Bikes</a></li>
                     </ol>
                 </li>
                 <li class="menu-item"><a href="..\logout.php">Log Out</a></li>
@@ -115,9 +115,9 @@ if(isset($_POST['owner_name'])){
 
     <div class="container ">
         <div class="text">
-            Enter Your Bike Details
+            Enter Your Car Details
         </div>
-        <form action="sellbikes.php" method="post" enctype="multipart/form-data">
+        <form action="sellcars.php" method="post" enctype="multipart/form-data">
 
             <!--Section1-->
             <div class="section" id="section1">
@@ -230,7 +230,7 @@ if(isset($_POST['owner_name'])){
 
                 <div class="form-row">
                     <div class="input-data " id="img">
-                        Upload Your Bike Image
+                        Upload Your Car Image
                         <input class="img" type="file" onchange="readURL(this)" accept="Image/*" name="img_url" id="img_url" required>
                         <br />
                         <br />

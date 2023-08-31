@@ -31,7 +31,12 @@ echo '
 </header>
 ';
 
-$con = mysqli_connect("localhost","root","","autoz");
+$servername = "db";
+      $username = "root";
+      $password = "your_root_password_here";
+      $port = '3306';
+      $dbname = "autoz";
+        $con = new mysqli($servername, $username, $password, $dbname);
 
 //Displaying Cars under reviews
 $sqlget="SELECT * from sold_cars";
