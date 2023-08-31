@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="mgr.css">
-    <title>Manager Portal</title>
-</head>
-<body>
-
 <?php
 session_start();
 
@@ -33,7 +23,7 @@ echo '
 
 $servername = "db";
       $username = "root";
-      $password = "your_root_password_here";
+      $password = "autoz2023";
       $port = '3306';
       $dbname = "autoz";
         $con = new mysqli($servername, $username, $password, $dbname);
@@ -51,11 +41,11 @@ echo '<div class="container">';
         if(mysqli_num_rows($checkResult) > 0){
             echo '<div class="box">';
             echo'<div class="box-img">';
-            echo '<img src="/WebP/SellCars/' . $row['img_url'] . '" alt="">';
+            echo '<img src="/SellCars/' . $row['img_url'] . '" alt="">';
             echo '</div>';
                 echo  "<h2>$row[brand]</h2>";
                 echo  "<h2>$row[model]</h2>";
-                echo "<h2>Year: $row[year]</h2>";
+                echo "<h2>Year: $row[reg_year]</h2>";
                 echo "<h2>Price: $row[price]";
                 echo "<a onclick='buyClickHandlerCars(\"$row[cid]\")' class='btn' href='#?param=\"$row[cid]\"'>User Confirmed</a>";
                 echo "<a onclick='cancelClickHandlerCars(\"$row[cid]\")' class='btn-cancel' href='#?param=\"$row[cid]\"'>User Cancelled</a>";
@@ -79,11 +69,11 @@ echo '<div class="container">';
         if(mysqli_num_rows($checkResultB) > 0){
             echo '<div class="box">';
             echo'<div class="box-img">';
-            echo '<img src="/WebP/SellBikes/' . $rowbikes['img_url'] . '" alt="">';
+            echo '<img src="/SellBikes/' . $rowbikes['img_url'] . '" alt="">';
             echo '</div>';
                 echo  "<h2>$rowbikes[brand]</h2>";
                 echo  "<h2>$rowbikes[model]</h2>";
-                echo "<h2>Year: $rowbikes[year]</h2>";
+                echo "<h2>Year: $rowbikes[reg_year]</h2>";
                 echo "<h2>Price: $rowbikes[price]";
                 echo "<a onclick='buyClickHandlerBikes(\"$rowbikes[bid]\")' class='btn' href='#?param=\"$rowbikes[bid]\"'>User Confirmed</a>";
                 echo "<a onclick='cancelClickHandlerBikes(\"$rowbikes[bid]\")' class='btn-cancel' href='#?param=\"$rowbikes[bid]\"'>User Cancelled</a>";
@@ -92,6 +82,17 @@ echo '<div class="container">';
     }
 echo '</div>';
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="mgr.css">
+    <title>Manager Portal</title>
+    <link rel="shortcut icon" href="../AutoZ.png" type="image/x-icon">
+</head>
+<body>
 
 <script>
 

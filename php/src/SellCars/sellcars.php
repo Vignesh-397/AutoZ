@@ -4,7 +4,7 @@ session_start();
 if(isset($_POST['owner_name'])){
     $servername = "db";
     $username = "root";
-    $password = "your_root_password_here";
+    $password = "autoz2023";
     $port = '3306';
     $dbname = "autoz";
       $con = new mysqli($servername, $username, $password, $dbname);
@@ -77,7 +77,8 @@ if(isset($_POST['owner_name'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="sellcars.css" class="css">
-    <title>Document</title>
+    <title>Sell Cars</title>
+    <link rel="shortcut icon" href="../AutoZ.png" type="image/x-icon">
 </head>
 
 <body>

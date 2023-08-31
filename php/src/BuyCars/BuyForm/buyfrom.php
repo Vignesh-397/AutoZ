@@ -56,6 +56,8 @@ if (isset($_GET['param'])) {
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="buyform.css">
+  <title>Buy Cars</title>
+  <link rel="shortcut icon" href="../../AutoZ.png" type="image/x-icon">
 </head>
 
 <body>
