@@ -11,7 +11,7 @@ services:
     volumes:
       - ./php/src:/var/www/html/
     ports:
-      - "8000:80"  # Corrected indentation
+      - "8000:80"  
 
   db:
     container_name: db
@@ -23,12 +23,12 @@ services:
       MYSQL_USER: your_mysql_user_here
       MYSQL_PASSWORD: your_mysql_password_here
     ports:
-      - "9906:3306"  # Corrected indentation
+      - "9906:3306"  
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - "8080:80"  # Corrected indentation
+      - "8080:80"  
     restart: always
     environment:
       PMA_HOST: db

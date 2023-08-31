@@ -12,9 +12,9 @@ $dbname = "autoz";
 
 //Register
 if(isset($_POST['name'])){
-    if(!$con){
-        die("connection to this database failed due to" . mysqli_connect_error());
-    }
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    } 
     // echo "Success connecting to the db";
 
     // Collect post variables
@@ -37,7 +37,7 @@ if(isset($_POST['name'])){
 
 
     // Check if the email is already registered
-    $email_check_query = "SELECT * FROM SignInInfo WHERE Email='$mail' LIMIT 1";
+    $email_check_query = "SELECT * FROM signininfo WHERE Email='$mail' LIMIT 1";
     $result = mysqli_query($con, $email_check_query);
     $user = mysqli_fetch_assoc($result);
 
@@ -87,7 +87,7 @@ if (isset($_POST['login'])) {
     $mail = $_POST['mail'];
     $password = $_POST['userpassword'];
 
-    $query = "SELECT Password FROM SignInInfo WHERE Email='$mail' LIMIT 1";
+    $query = "SELECT Password FROM signininfo WHERE Email='$mail' LIMIT 1";
     $result = mysqli_query($con, $query);
     $user = mysqli_fetch_assoc($result);
 
