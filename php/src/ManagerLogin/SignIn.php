@@ -1,10 +1,11 @@
 <?php
 session_start();
-    $server = "localhost";
-    $username = "root";
-    $password = "";
-
-    $con = mysqli_connect($server, $username, $password,'autoz');
+$servername = "db";
+$username = "root";
+$password = "your_root_password_here";
+$port = '3306';
+$dbname = "autoz";
+  $con = new mysqli($servername, $username, $password, $dbname);
 
 //Manager Login
 if (isset($_POST['login'])) {
