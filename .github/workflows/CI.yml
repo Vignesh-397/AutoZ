@@ -26,7 +26,7 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker buildx create --use
-          docker buildx build --platform linux/amd64,linux/arm64 -t your-dockerhub-username/your-image-name:latest .
+          docker buildx build --platform linux/amd64,linux/arm64 -t vignesh397/autoz:latest -f ../php/Dockerfile
           docker push vignesh397/autoz:latest
 
       - name: Cleanup
