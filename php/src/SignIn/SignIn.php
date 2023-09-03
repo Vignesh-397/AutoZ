@@ -33,9 +33,6 @@ if(isset($_POST['name'])){
     //     exit();
     // }
 
-
-
-
     // Check if the email is already registered
     $email_check_query = "SELECT * FROM signininfo WHERE Email='$mail' LIMIT 1";
     $result = mysqli_query($con, $email_check_query);
