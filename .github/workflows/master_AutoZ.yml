@@ -31,7 +31,7 @@ jobs:
       with:
         push: true
         tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_56f52162c956475eb2aebaddec70d461 }}/vignesh397/autoz:${{ github.sha }}
-        file: ./Dockerfile
+        file: ./php/Dockerfile
 
   deploy:
     runs-on: ubuntu-latest
