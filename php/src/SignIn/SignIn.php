@@ -56,10 +56,10 @@ if(isset($_POST['name'])){
         $insert = true;
 
         //future use
-        // $_SESSION['name'] = $name;
-        // $_SESSION['city'] = $city;
-        // $_SESSION['mail'] = $mail;
-        // $_SESSION['phone'] = $phone;
+        $_SESSION['name'] = $name;
+        $_SESSION['city'] = $city;
+        $_SESSION['mail'] = $mail;
+        $_SESSION['phone'] = $phone;
     }
     else{
         echo "ERROR: $sql <br> $con->error";
@@ -92,10 +92,10 @@ if (isset($_POST['login'])) {
         $_SESSION['logged_in'] = true;
 
         //future use
-        $_SESSION['name'] = $user['Name'];
-        $_SESSION['city'] = $user['City'];
-        $_SESSION['mail'] = $user['Email'];
-        $_SESSION['phone'] = $user['Phone'];
+        // $_SESSION['name'] = $user['Name'];
+        // $_SESSION['city'] = $user['City'];
+        // $_SESSION['mail'] = $user['Email'];
+        // $_SESSION['phone'] = $user['Phone'];
         header('Location: ../PostLogin/postlogin.php');
     } else {
         $_SESSION['logged_in'] = false;
