@@ -60,7 +60,7 @@
                 <div class="contact">
                     <h3>Contact Us</h3>
                     <div> <p>Emial :</p> autozhelp@gmail.com </div>
-                    <div><p>Phone :</p> +91 7829946725</div>
+                    <div><p>Phone :</p> +91 7829946726</div>
                     <div ><p>Address : </p> BMS College Of Engineering, Bull Temple Road basvanagudi, bangalore</div>
                     <div id="BackTop">
                         <a href="#">Top</a>
