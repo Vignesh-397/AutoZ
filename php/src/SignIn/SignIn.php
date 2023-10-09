@@ -56,10 +56,10 @@ if(isset($_POST['name'])){
         $insert = true;
 
         //future use
-        $_SESSION['name'] = $name;
-        $_SESSION['city'] = $city;
-        $_SESSION['mail'] = $mail;
-        $_SESSION['phone'] = $phone;
+        // $_SESSION['name'] = $name;
+        // $_SESSION['city'] = $city;
+        // $_SESSION['mail'] = $mail;
+        // $_SESSION['phone'] = $phone;
     }
     else{
         echo "ERROR: $sql <br> $con->error";
@@ -106,7 +106,7 @@ if (isset($_POST['login'])) {
 
 }
 
-mysqli_close($con);
+// mysqli_close($con);
 
 ?>
 <!DOCTYPE html>
