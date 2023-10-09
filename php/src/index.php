@@ -33,7 +33,7 @@
                 </ol>
             </li>
             <li class="menu-item"><a href="#section-footer">Contact</a></li>
-            <li class="menu-item"><a href="SignIn/signin.php">Sign In</a></li>
+            <li class="menu-item"><a href="SignIn/SignIn.php">Sign In</a></li>
             <li class="menu-item"><a href="ManagerLogin/SignIn.php">Manager Log In</a></li>
         </ol>
     </nav>
