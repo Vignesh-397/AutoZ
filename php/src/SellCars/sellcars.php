@@ -46,7 +46,7 @@ if(isset($_POST['owner_name'])){
     '$ownership', '$engine', '$transmission', '$mileage', '$wheel', '$seats','$price', '$img_url')";
 
     if($con->query($sql) === true){
-        echo "Successfully inserted";
+        // echo "Successfully inserted";
         $insert = true;
     }
     else{

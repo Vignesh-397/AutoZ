@@ -12,11 +12,11 @@ if (isset($_GET['param'])) {
     if (isset($_POST['name'])) {
       $servername = "db";
       $username = "root";
-      $password = "your_root_password_here";
+      $password = "autoz2023";
       $port = '3306';
       $dbname = "autoz";
         $con = new mysqli($servername, $username, $password, $dbname);
-        echo "param value: $param";
+        // echo "param value: $param";
 
         if (!$con) {
             die("Connection to this database failed due to " . mysqli_connect_error());
